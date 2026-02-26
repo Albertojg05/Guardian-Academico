@@ -9,18 +9,15 @@ document.getElementById('startBtn').addEventListener('click', () => {
 
     if (!taskEl || !minsEl) return;
 
-    const task = taskEl.value;
-    const mins = minsEl.value;
-
-    if (!task) {
+    if (!taskEl.value) {
         alert("Escribe una meta primero, USUARIO.");
         return;
     }
 
     chrome.runtime.sendMessage({
         command: "START",
-        task: task,
-        minutes: parseInt(mins) || 25
+        task: taskEl.value,
+        minutes: parseInt(minsEl.value) || 25
     });
 });
 
@@ -36,29 +33,32 @@ function actualizarInterfaz() {
 
         const setupArea = document.getElementById('setup-area');
         const focusArea = document.getElementById('focus-area');
+        const timeDisplay = document.getElementById('timeDisplay');
+        const currentTask = document.getElementById('current-task');
         const avatar = document.getElementById('avatar');
         const msg = document.getElementById('msg');
 
         if (response.isRunning) {
             setupArea.classList.add('hidden');
             focusArea.classList.remove('hidden');
+            currentTask.innerText = response.task;
 
             let mins = Math.floor(response.timeLeft / 60);
             let secs = response.timeLeft % 60;
-            document.getElementById('timeDisplay').innerText = `${mins}:${secs < 10 ? '0' + secs : secs}`;
+            timeDisplay.innerText = `${mins}:${secs < 10 ? '0' + secs : secs}`;
 
             if (response.isPausedByDistraction) {
                 avatar.innerText = "🛑";
-                msg.innerText = "TIEMPO CONGELADO. Regresa a una página de estudio.";
-                msg.style.color = "#e74c3c";
+                msg.innerText = "TIEMPO CONGELADO. Regresa a estudiar.";
             } else {
                 avatar.innerText = "👨‍💻";
-                msg.innerText = `Distracciones evitadas: ${response.distractionCount}`;
-                msg.style.color = "#7f8c8d";
+                msg.innerText = `Distracciones bloqueadas: ${response.distractionCount || 0}`;
             }
         } else {
             setupArea.classList.remove('hidden');
             focusArea.classList.add('hidden');
+            avatar.innerText = "👤";
+            msg.innerText = "Listo para empezar.";
         }
     });
 }
