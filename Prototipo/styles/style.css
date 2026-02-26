@@ -1,0 +1,91 @@
+body {
+    width: 300px;
+    padding: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+}
+
+#app-container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#avatar {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.timer {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4A90E2;
+}
+
+.btn-start {
+    background: #4A90E2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-start:hover {
+    background: #357ABD;
+}
+
+.btn-stop {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-stop:hover {
+    background: #c0392b;
+}
+
+.hidden {
+    display: none;
+}
+
+.status-msg {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 15px;
+}
+
+.racha-badge {
+    background: #fff3cd;
+    color: #856404;
+    padding: 5px 15px;
+    border-radius: 15px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 10px;
+}

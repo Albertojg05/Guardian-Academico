@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FocusBuddy Pro</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <div id="app-container">
+        <div id="avatar" style="font-size: 50px; margin-bottom: 10px;">👤</div>
+
+        <div id="setup-area">
+            <input type="text" id="taskInput" placeholder="¿Qué vas a estudiar?">
+            <div style="margin-bottom: 15px; font-size: 14px;">
+                <label>Minutos:</label>
+                <input type="number" id="minutesInput" value="25" min="1" max="60"
+                    style="width: 50px; display: inline-block;">
+            </div>
+            <button id="startBtn" class="btn-start">Iniciar Enfoque</button>
+        </div>
+
+        <div id="focus-area" class="hidden">
+            <div class="timer" id="timeDisplay">25:00</div>
+            <p id="current-task"></p>
+            <button id="stopBtn" class="btn-stop">Rendirse</button>
+        </div>
+
+        <p id="msg"></p>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
