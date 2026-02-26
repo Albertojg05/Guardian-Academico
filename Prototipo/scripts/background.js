@@ -36,7 +36,7 @@ function startCountdown() {
                 type: 'basic',
                 iconUrl: 'icon.jpg',
                 title: '¡TIEMPO TERMINADO!',
-                message: 'Excelente trabajo, Beto.'
+                message: 'Excelente trabajo, USUARIO.'
             });
         }
     }, 1000);
@@ -51,7 +51,7 @@ function resetTimer() {
 function verificarUrl(url) {
     if (!isRunning) return;
 
-    const blacklist = ["facebook.com", "youtube.com", "tiktok.com", "instagram.com", "x.com"];
+    const blacklist = ["facebook.com", "youtube.com", "tiktok.com", "instagram.com", "x.com", "roblox.com", "Friv.com"];
     const esProhibido = blacklist.some(site => url.includes(site));
     const esPaginaBloqueo = url.includes("bloqueado.html");
 

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "FocusBuddy ITSON Pro",
+  "name": "Guardian Academico",
   "version": "1.3",
   "action": {
     "default_popup": "index.html",

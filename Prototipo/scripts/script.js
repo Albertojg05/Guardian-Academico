@@ -13,7 +13,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
     const mins = minsEl.value;
 
     if (!task) {
-        alert("Escribe una meta primero, Beto.");
+        alert("Escribe una meta primero, USUARIO.");
         return;
     }
 
